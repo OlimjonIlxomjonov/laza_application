@@ -11,7 +11,7 @@ import 'package:laza_applicaiton/features/auth/presentation/bloc/sign_in/sign_in
 import 'package:laza_applicaiton/features/auth/presentation/bloc/sign_in/sign_in_state.dart';
 import 'package:laza_applicaiton/features/auth/presentation/screen/forgot_password/pages/forgot_password_page.dart';
 import 'package:laza_applicaiton/features/auth/presentation/widgets/remember_widget.dart';
-import 'package:laza_applicaiton/features/home/presentation/creens/home_page.dart';
+import 'package:laza_applicaiton/features/home/presentation/screens/products/home_page.dart';
 import '../../../../../core/common/constants/colors/app_colors.dart';
 import '../../../../../core/common/widgets/text_field/validated_text_field.dart';
 

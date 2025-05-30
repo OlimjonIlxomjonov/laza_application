@@ -1,6 +1,7 @@
 abstract class ApiUrls {
   /// AUTH API
   static const authBaseUrl = 'https://manuchehra.pythonanywhere.com/api/';
+  static const homeBaseUrl = 'https://fakestoreapi.com/';
 
   /// AUTH
   static const String auth = 'auth/';
@@ -12,4 +13,9 @@ abstract class ApiUrls {
   static const String resetNewPassword =
       '${auth}reset-password/confirm-password/';
   static const String confirmEmail = '${auth}confirm-email/';
+
+  /// HOME
+  static const String products = 'products/';
+  static const String productsCategories = 'products/categories/';
+  static const String categories = 'products/category/';
 }

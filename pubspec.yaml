@@ -17,6 +17,9 @@ dependencies:
   flutter_bloc: ^9.1.1
   get_it: ^8.0.3
   pin_code_fields: ^8.0.1
+  iconly: ^1.0.1
+  provider:
+  http: ^1.4.0
 
 dev_dependencies:
   flutter_test:

@@ -9,6 +9,8 @@ import 'package:laza_applicaiton/core/utils/responsiveness/app_responsivness.dar
 import 'package:laza_applicaiton/features/auth/presentation/screen/onboarding/on_boarding_page.dart';
 import 'package:laza_applicaiton/features/auth/presentation/screen/sign_in/sign_in_page.dart';
 import 'package:laza_applicaiton/features/auth/presentation/screen/sign_up/sign_up_page.dart';
+import 'package:laza_applicaiton/features/home/presentation/screens/products/home_page.dart';
+import 'package:laza_applicaiton/features/home/presentation/screens/main_page.dart';
 
 import '../../../../core/common/constants/colors/app_colors.dart';
 
@@ -63,6 +65,12 @@ class _AuthPageState extends State<AuthPage> {
                   'Google',
                   () {},
                   AppColors.deepOrange,
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    AppRoute.go(MainPage());
+                  },
+                  child: Text('Temporary Button!'),
                 ),
               ],
             ),
