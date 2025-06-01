@@ -8,7 +8,7 @@ abstract class AppColors {
   static const Color black = Color(0xFF1D1E20);
   static const Color red = Color(0xFFFF5757);
   static const Color pink = Color(0xFFE91E63);
-  static const Color purple = Color(0xFF9C27B0);
+  static const Color purple = Color(0xFF9775FA);
   static const Color deepPurple = Color(0xFF673AB7);
   static const Color indigo = Color(0xFF4267B2);
   static const Color blue = Color(0xFF2196F3);

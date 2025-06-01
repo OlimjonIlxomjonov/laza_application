@@ -20,11 +20,15 @@ import 'package:laza_applicaiton/features/home/data/repository/home_repository_i
 import 'package:laza_applicaiton/features/home/data/source/home_remote_data_source_impl.dart';
 import 'package:laza_applicaiton/features/home/data/source/home_remote_datasource.dart';
 import 'package:laza_applicaiton/features/home/domain/repository/product_repository.dart';
+import 'package:laza_applicaiton/features/home/domain/usecase/all_carts_use_case.dart';
 import 'package:laza_applicaiton/features/home/domain/usecase/all_products_use_case.dart';
+import 'package:laza_applicaiton/features/home/domain/usecase/delete_product_use_case.dart';
 import 'package:laza_applicaiton/features/home/domain/usecase/get_by_categories_use_case.dart';
 import 'package:laza_applicaiton/features/home/domain/usecase/get_single_product_use_case.dart';
 import 'package:laza_applicaiton/features/home/domain/usecase/product_categories_use_case.dart';
+import 'package:laza_applicaiton/features/home/presentation/bloc/carts/carts_bloc.dart';
 import 'package:laza_applicaiton/features/home/presentation/bloc/categories_list/categories_bloc.dart';
+import 'package:laza_applicaiton/features/home/presentation/bloc/delete_product/delete_bloc.dart';
 import 'package:laza_applicaiton/features/home/presentation/bloc/product_by_category/by_category_bloc.dart';
 import 'package:laza_applicaiton/features/home/presentation/bloc/products/products_bloc.dart';
 import 'package:laza_applicaiton/features/home/presentation/bloc/single_product/single_product_bloc.dart';
@@ -60,6 +64,8 @@ Future<void> setup() async {
   sl.registerLazySingleton(() => ProductCategoriesUseCase(sl()));
   sl.registerLazySingleton(() => GetByCategoriesUseCase(sl()));
   sl.registerLazySingleton(() => GetSingleProductUseCase(sl()));
+  sl.registerLazySingleton(() => AllCartsUseCase(sl()));
+  sl.registerLazySingleton(() => DeleteProductUseCase(sl()));
 
   /// BLOC
   // AUTH
@@ -74,4 +80,6 @@ Future<void> setup() async {
   sl.registerLazySingleton(() => CategoriesBloc(sl()));
   sl.registerLazySingleton(() => ByCategoryBloc(sl()));
   sl.registerLazySingleton(() => SingleProductBloc(sl()));
+  sl.registerLazySingleton(() => CartsBloc(sl()));
+  sl.registerLazySingleton(() => DeleteBloc(sl()));
 }

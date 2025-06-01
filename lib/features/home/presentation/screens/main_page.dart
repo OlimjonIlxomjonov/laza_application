@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:laza_applicaiton/core/common/constants/colors/app_colors.dart';
 import 'package:laza_applicaiton/core/common/textstyles/app_text_styles.dart';
+import 'package:laza_applicaiton/features/home/presentation/screens/carts/carts_page.dart';
 import 'package:laza_applicaiton/features/home/presentation/screens/products/home_page.dart';
+import 'package:laza_applicaiton/features/home/presentation/screens/wallet/wallet_page.dart';
 import 'package:laza_applicaiton/features/home/presentation/screens/wishlist/favourites_page.dart';
 
 class MainPage extends StatefulWidget {
@@ -18,8 +20,8 @@ class _MainPageState extends State<MainPage> {
   final List<Widget> pages = [
     HomePage(),
     FavouritesPage(),
-    HomePage(),
-    HomePage(),
+    CartsPage(),
+    WalletPage(),
   ];
 
   final List<String> labels = ['Home', 'Favorites', 'Cart', 'Wallet'];
@@ -55,20 +57,20 @@ class _MainPageState extends State<MainPage> {
                     return ScaleTransition(scale: animation, child: child);
                   },
                   child:
-                      isSelected
-                          ? Text(
-                            labels[index],
-                            key: ValueKey("label_$index"),
-                            style: AppTextStyles.inter.medium(
-                              color: AppColors.backgroundNText,
-                              fontSize: 11,
-                            ),
-                          )
-                          : Icon(
-                            icons[index],
-                            key: ValueKey("icon_$index"),
-                            color: Colors.grey,
-                          ),
+                  isSelected
+                      ? Text(
+                    labels[index],
+                    key: ValueKey("label_$index"),
+                    style: AppTextStyles.inter.medium(
+                      color: AppColors.backgroundNText,
+                      fontSize: 11,
+                    ),
+                  )
+                      : Icon(
+                    icons[index],
+                    key: ValueKey("icon_$index"),
+                    color: Colors.grey,
+                  ),
                 ),
               );
             }),

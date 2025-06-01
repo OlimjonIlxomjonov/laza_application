@@ -150,12 +150,12 @@ class _FavouritesPageState extends State<FavouritesPage> {
                                         },
                                         child: Icon(
                                           likedIndex.contains(index)
-                                              ? IconlyBold.heart
-                                              : IconlyLight.heart,
+                                              ? IconlyLight.heart
+                                              : IconlyBold.heart,
                                           color:
                                               likedIndex.contains(index)
-                                                  ? Colors.red
-                                                  : Colors.black,
+                                                  ? Colors.black
+                                                  : Colors.red,
                                         ),
                                       ),
                                     ],

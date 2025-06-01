@@ -22,7 +22,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // bool isActive = true;
   Set<int> likedIndex = {};
   List<String> drawerOptions = [
     'Account Information',

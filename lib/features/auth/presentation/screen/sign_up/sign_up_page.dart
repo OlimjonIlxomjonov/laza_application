@@ -98,7 +98,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   label: "Email Address",
                   controller: _emailController,
                 ),
-                RememberMeSwitch(),
+                RememberMeSwitch(text: AppStrings.rememberMe),
               ],
             ),
             SizedBox(),

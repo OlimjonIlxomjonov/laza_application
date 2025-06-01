@@ -8,6 +8,7 @@ import 'package:laza_applicaiton/core/utils/responsiveness/app_responsivness.dar
 import 'package:laza_applicaiton/features/home/presentation/bloc/home_event.dart';
 import 'package:laza_applicaiton/features/home/presentation/bloc/single_product/singel_product_state.dart';
 import 'package:laza_applicaiton/features/home/presentation/bloc/single_product/single_product_bloc.dart';
+import 'package:laza_applicaiton/features/home/presentation/screens/reviews/review_page.dart';
 
 import '../../../../../core/common/widgets/app_bar/action_app_bar.dart';
 import '../../../../../core/page_routes/route_generator.dart';
@@ -203,11 +204,16 @@ class _SingleProductPageState extends State<SingleProductPage> {
                                 fontSize: 17,
                               ),
                             ),
-                            Text(
-                              'View All',
-                              style: AppTextStyles.inter.regular(
-                                color: AppColors.grey,
-                                fontSize: 13,
+                            GestureDetector(
+                              onTap: () {
+                                AppRoute.go(ReviewPage());
+                              },
+                              child: Text(
+                                'View All',
+                                style: AppTextStyles.inter.regular(
+                                  color: AppColors.grey,
+                                  fontSize: 13,
+                                ),
                               ),
                             ),
                           ],
@@ -256,6 +262,7 @@ class _SingleProductPageState extends State<SingleProductPage> {
                           ),
                         ),
                         ListTile(
+                          contentPadding: EdgeInsets.zero,
                           title: Text(
                             'Total Price',
                             style: AppTextStyles.inter.semiBold(
@@ -293,7 +300,18 @@ class _SingleProductPageState extends State<SingleProductPage> {
         opacity: _showBottomButton ? 1.0 : 0.0,
         child:
             _showBottomButton
-                ? BottomButtonWg(text: 'Add to Cart', onPressed: () {})
+                ? BottomButtonWg(
+                  text: 'Add to Cart',
+                  onPressed: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text('Successfully added to a cart!'),
+                        backgroundColor: AppColors.green,
+                      ),
+                    );
+                    AppRoute.close();
+                  },
+                )
                 : SizedBox.shrink(),
       ),
     );

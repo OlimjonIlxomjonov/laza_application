@@ -109,7 +109,7 @@ class _SignInPageState extends State<SignInPage> {
                     AppRoute.go(ForgotPasswordPage());
                   },
                 ),
-                RememberMeSwitch(),
+                RememberMeSwitch(text: AppStrings.rememberMe),
               ],
             ),
             RichText(

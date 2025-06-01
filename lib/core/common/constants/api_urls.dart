@@ -18,4 +18,5 @@ abstract class ApiUrls {
   static const String products = 'products/';
   static const String productsCategories = 'products/categories/';
   static const String categories = 'products/category/';
+  static const String allCarts = 'carts/';
 }

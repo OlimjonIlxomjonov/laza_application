@@ -17,3 +17,11 @@ class FetchSingleProductEvent extends HomeEvent {
 
   FetchSingleProductEvent(this.id);
 }
+
+class FetchCartsEvent extends HomeEvent {}
+
+class DeleteProductEvent extends HomeEvent {
+  final int id;
+
+  DeleteProductEvent(this.id);
+}

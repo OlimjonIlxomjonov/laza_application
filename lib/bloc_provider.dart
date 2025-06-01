@@ -5,7 +5,9 @@ import 'package:laza_applicaiton/features/auth/presentation/bloc/create_new_pass
 import 'package:laza_applicaiton/features/auth/presentation/bloc/reset_password/reset_password_bloc.dart';
 import 'package:laza_applicaiton/features/auth/presentation/bloc/sign_in/sign_in_bloc.dart';
 import 'package:laza_applicaiton/features/auth/presentation/bloc/sign_up/sign_up_bloc.dart';
+import 'package:laza_applicaiton/features/home/presentation/bloc/carts/carts_bloc.dart';
 import 'package:laza_applicaiton/features/home/presentation/bloc/categories_list/categories_bloc.dart';
+import 'package:laza_applicaiton/features/home/presentation/bloc/delete_product/delete_bloc.dart';
 import 'package:laza_applicaiton/features/home/presentation/bloc/product_by_category/by_category_bloc.dart';
 import 'package:laza_applicaiton/features/home/presentation/bloc/products/products_bloc.dart';
 import 'package:laza_applicaiton/features/home/presentation/bloc/single_product/single_product_bloc.dart';
@@ -41,6 +43,8 @@ class MyBlocProvider extends StatelessWidget {
         BlocProvider<SingleProductBloc>(
           create: (context) => sl<SingleProductBloc>(),
         ),
+        BlocProvider<CartsBloc>(create: (context) => sl<CartsBloc>()),
+        BlocProvider<DeleteBloc>(create: (context) => sl<DeleteBloc>()),
       ],
       child: child,
     );

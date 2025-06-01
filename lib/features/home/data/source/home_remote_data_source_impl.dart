@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:laza_applicaiton/core/common/constants/api_urls.dart';
 import 'package:laza_applicaiton/core/netwrok/http_client.dart';
 import 'package:laza_applicaiton/core/utils/logger/logger.dart';
+import 'package:laza_applicaiton/features/home/data/model/all_carts_model.dart';
 import 'package:laza_applicaiton/features/home/data/model/all_products_model.dart';
 import 'package:laza_applicaiton/features/home/data/source/home_remote_datasource.dart';
 
@@ -87,6 +88,42 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
       }
     } catch (e) {
       logger.e('Error occurred while fetching a single product! $e}');
+      rethrow;
+    }
+  }
+
+  /// ALL CARTS
+  @override
+  Future<AllCartsModel> fetchAllCarts() async {
+    try {
+      final response = await myHttpClient.get(ApiUrls.allCarts);
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        logger.i('All Cats successfully fetched! ${response.body}');
+        final decodedJson = jsonDecode(response.body);
+        return AllCartsModel.fromJson(decodedJson);
+      } else {
+        throw Exception(
+          'Failed to load carts. Status code: ${response.statusCode}',
+        );
+      }
+    } catch (e) {
+      logger.e('Error fetching carts: $e');
+      rethrow;
+    }
+  }
+
+  @override
+  Future<bool> deleteProduct({required int id}) async {
+    try {
+      final response = await myHttpClient.delete("${ApiUrls.products}$id");
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        logger.i('Successfully deleted! ${response.statusCode}');
+        return true;
+      } else {
+        throw Exception('Failed to delete! ${response.statusCode}');
+      }
+    } catch (e) {
+      logger.e('Error occurred while deleting! $e');
       rethrow;
     }
   }

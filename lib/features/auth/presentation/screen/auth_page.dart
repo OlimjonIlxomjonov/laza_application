@@ -30,6 +30,14 @@ class _AuthPageState extends State<AuthPage> {
         onPressed: () {
           AppRoute.go(OnBoardingPage());
         },
+        actions: [
+          IconButton(
+            onPressed: () {
+              AppRoute.go(MainPage());
+            },
+            icon: Icon(Icons.skip_next),
+          ),
+        ],
       ),
       body: Padding(
         padding: EdgeInsets.only(left: 20, right: 20, bottom: 25),
@@ -65,12 +73,6 @@ class _AuthPageState extends State<AuthPage> {
                   'Google',
                   () {},
                   AppColors.deepOrange,
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    AppRoute.go(MainPage());
-                  },
-                  child: Text('Temporary Button!'),
                 ),
               ],
             ),

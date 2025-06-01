@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:laza_applicaiton/core/common/constants/strings/app_strings.dart';
 import 'package:laza_applicaiton/core/common/textstyles/app_text_styles.dart';
 
 import '../../../../core/common/constants/colors/app_colors.dart';
 
 class RememberMeSwitch extends StatefulWidget {
-  const RememberMeSwitch({super.key});
+  final String text;
+
+  const RememberMeSwitch({super.key, required this.text});
 
   @override
   State<RememberMeSwitch> createState() => _RememberMeSwitchState();
@@ -22,7 +23,7 @@ class _RememberMeSwitchState extends State<RememberMeSwitch> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            AppStrings.rememberMe,
+            widget.text,
             style: AppTextStyles.inter.medium(
               color: AppColors.black,
               fontSize: 13,
